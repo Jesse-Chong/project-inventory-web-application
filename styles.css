@@ -8,8 +8,6 @@ header {
 .background-container {
     position: fixed;
     /* img will cover 50% of the containers width and adjust the height automatically */
-    background-size: 50% auto;
-    /* top and left: 0 ensure the container starts from the top-left corner of the screen */
     top: 0;
     left: 0;
     /* ensures the container covers the entire webpage */
@@ -37,4 +35,10 @@ header {
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
 }
