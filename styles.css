@@ -1,6 +1,5 @@
 header {
     text-align: center;
-    /* background-color: aqua; */
     background-color: darkgray;
     border-radius: 25%;
 }
@@ -41,6 +40,16 @@ header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:aquamarine;
+    text-align: center;
+    padding: 5px;
 }
 
 @media (max-width: 767px) {

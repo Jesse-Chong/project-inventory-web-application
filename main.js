@@ -43,3 +43,13 @@ console.log(shoes)
 
 
 
+const form = document.getElementById('shoe-form');
+const shoeInput = document.querySelector("input[name='name']");
+const priceInput = document.querySelector("input[name='price']");
+const inStockInput = document.querySelector("input[name='inStock']");
+const colorInput = document.querySelector("input[name='color']");
+const ratingInput = document.querySelector("input[name='rating']");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+})
