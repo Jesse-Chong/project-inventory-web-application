@@ -1,0 +1,15 @@
+{
+  "name": "project-inventory-web-application",
+  "version": "1.0.0",
+  "description": "Initizializing a new repo",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^4.0.2"
+  }
+}
