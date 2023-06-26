@@ -1,5 +1,6 @@
 header {
     text-align: center;
+    /* background-color: aqua; */
     background-color: darkgray;
     border-radius: 25%;
 }
@@ -16,10 +17,16 @@ header {
     z-index: -1;
     /* ensure overflow content is hidden */
     overflow: hidden;
-    background-image: url('assets/sneaker-wallpaper-20070518065919-scaled-1536x1024\ Small.jpeg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(4px);
+}
+
+.background-image {
+    /* style the actualy background image itself */
+    width: 100%;
+    height: 100%;
+    /* object-fit: fill will make the image fill the container completely to prevent distortions */
+    object-fit: fill;
+    /* add a blurred effect to make the background less distracting */
+    filter: blur(1px);
 }
 
 .container {
