@@ -1,5 +1,3 @@
-let shoeIdCounter = 3; // counter to generate IDs
-
 // Shoe inventory
 const shoes = [
     {
@@ -44,13 +42,16 @@ console.log(shoes)
 // create a variable with user input to add the new item when submitted
 
 //
-
+let shoeIdCounter = 0;
 const form = document.getElementById('shoe-form');
 const shoeInput = document.querySelector("#shoe-name");
 const priceInput = document.querySelector("#shoe-price");
 const inStockInput = document.querySelector("#shoe-inStock");
 const colorInput = document.querySelector("#shoe-color");
 const ratingInput = document.querySelector("#shoe-rating");
+const shoeContainer = document.getElementById('shoe-container');
+
+
 
 form.addEventListener("submit", (event) => {
     // extract values from user input and store them into variables
@@ -78,9 +79,9 @@ form.addEventListener("submit", (event) => {
             rating
         };
 
-        shoes.unshift(newShoe); // add the new shoe to the beginning of the inventory
+        addShoeToInventory(newShoe); // add the new shoe to the inventory
 
-        console.log(newShoe)
+        console.log(addShoeToInventory)
         // reset the values of the submit form after user submits 
         shoeInput.value = "";
         priceInput.value = "";
@@ -88,6 +89,25 @@ form.addEventListener("submit", (event) => {
         colorInput.value = "";
         ratingInput.value = "";
 });
+
+// create new shoe element and add to inventory
+function addShoeToInventory(shoe) { // use shoe as a parameter
+    const { id, name, price, inStock, color, rating } = shoe; // destructure shoe to get access to properties of shoe
+
+    const newShoe = document.createElement('div'); // let newShoe create a new div
+    newShoe.classList.add('shoe'); // add a class to it named "shoe"
+
+    const shoeInfo = document.createElement('div'); // assign the variable to a created dive element
+    shoeInfo.classList.add('shoe-info'); // add a class to it name "shoe-info"
+    // set the innerHTML property to shoe shoe info, (if instock is true write In Stock, else write Out of Stock)
+    shoeInfo.innerHTML = `
+    <h3>Shoe ID: ${id}</h3>
+    <h3>${name}</h3>
+    <p>Price: $${price}</p>
+    <p>${inStock ? 'In Stock' : 'Out of Stock'}</p> 
+    <p>Color: ${color}</p>
+    <p>Rating: ${rating}</p>`
+}
 
 console.log(shoes);
 
