@@ -1,4 +1,4 @@
-let shoeIdCounter = 0; // counter to generate IDs
+let shoeIdCounter = 3; // counter to generate IDs
 
 // Shoe inventory
 const shoes = [
@@ -47,8 +47,8 @@ console.log(shoes)
 
 const form = document.getElementById('shoe-form');
 const shoeInput = document.querySelector("#shoe-name");
-const priceInput = document.querySelector("#shoe-inStock");
-const inStockInput = document.querySelector("#shoe-color");
+const priceInput = document.querySelector("#shoe-price");
+const inStockInput = document.querySelector("#shoe-inStock");
 const colorInput = document.querySelector("#shoe-color");
 const ratingInput = document.querySelector("#shoe-rating");
 
@@ -64,9 +64,30 @@ form.addEventListener("submit", (event) => {
 
 
         // Checks if name price color and rating are filled out, if not give an alert
-        if(!name || !price || !color || !rating) {
+        if(!name || isNaN(price) || !color || isNaN(rating)) {
             alert("Please fill in all required fields with valid inputs")
             return;
         }
-})
+
+        const newShoe = {
+            id: ++shoeIdCounter, // increament the counter and assign it to id of newShoe
+            name,
+            price,
+            inStock,
+            color,
+            rating
+        };
+
+        shoes.unshift(newShoe); // add the new shoe to the beginning of the inventory
+
+        console.log(newShoe)
+        // reset the values of the submit form after user submits 
+        shoeInput.value = "";
+        priceInput.value = "";
+        inStockInput.checked = false;
+        colorInput.value = "";
+        ratingInput.value = "";
+});
+
+console.log(shoes);
 
