@@ -109,5 +109,15 @@ function addShoeToInventory(shoe) { // use shoe as a parameter
     <p>Rating: ${rating}</p>`
 }
 
+const removeButton = document.createElement('button');
+removeButton.textContent = 'Remove'; // set the removebutton to say Remove
+removeButton.addEventListener('click', () => {
+    newShoe.remove(); // after clicking the removebutton, remove the newshoe that was added
+})
+
+newShoe.appendChild(shoeInfo); //  append the shoe info and remove button as child elements in newShoe
+newShoe.appendChild(removeButton);
+shoeContainer.insertBefore(newShoe, shoeContainer.firstChild) // insert the newShoe element to the beginning of the shoeContainer to add the inventory on top of the list
+
 console.log(shoes);
 
