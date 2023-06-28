@@ -106,8 +106,7 @@ function addShoeToInventory(shoe) { // use shoe as a parameter
     <p>Price: $${price}</p>
     <p>${inStock ? 'In Stock' : 'Out of Stock'}</p> 
     <p>Color: ${color}</p>
-    <p>Rating: ${rating}</p>`
-}
+    <p>Rating: ${rating}</p>`;
 
 const removeButton = document.createElement('button');
 removeButton.textContent = 'Remove'; // set the removebutton to say Remove
@@ -118,6 +117,17 @@ removeButton.addEventListener('click', () => {
 newShoe.appendChild(shoeInfo); //  append the shoe info and remove button as child elements in newShoe
 newShoe.appendChild(removeButton);
 shoeContainer.insertBefore(newShoe, shoeContainer.firstChild) // insert the newShoe element to the beginning of the shoeContainer to add the inventory on top of the list
+}
+
+// this is in charge of resetting the form without refreshing page
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+    shoeInput.value = "";
+    priceInput.value = "";
+    inStockInput.checked = false; // unchecks the box
+    colorInput.value = "";
+    ratingInput.value = "";
+})
 
 console.log(shoes);
 
