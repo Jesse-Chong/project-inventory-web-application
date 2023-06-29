@@ -28,20 +28,6 @@ const shoes = [
 
 console.log(shoes)
 
-//form
-// add evenlisteners for form
-
-// add event listener for resetbutton
-
-//handleformsubmit(event)
-// make sure the form adds a shoe to inventory and to the top of the page
-// reset button should reset the form only
-
-// make a validation function using alert
-
-// create a variable with user input to add the new item when submitted
-
-//
 let shoeIdCounter = 0;
 const form = document.getElementById('shoe-form');
 const shoeInput = document.querySelector("#shoe-name");
@@ -50,13 +36,14 @@ const inStockInput = document.querySelector("#shoe-inStock");
 const colorInput = document.querySelector("#shoe-color");
 const ratingInput = document.querySelector("#shoe-rating");
 const shoeContainer = document.getElementById('shoe-container');
+// const shoeElements = document.querySelectorAll('.shoe');
 
 
 
 form.addEventListener("submit", (event) => {
     // extract values from user input and store them into variables
     event.preventDefault(); // prevent form submission from refreshing the page
-    console.log(form)
+    console.log("form submitted")
     const name = shoeInput.value; // .value retrieves the user input for shoeInput
     const price = parseFloat(priceInput.value); // parseFloat is to turn the string into a number
     const inStock = inStockInput.checked; // checked property returns a boolean value to check wether the checkbox is checked or not then assign to inStock variable
@@ -97,6 +84,10 @@ function addShoeToInventory(shoe) { // use shoe as a parameter
     const newShoe = document.createElement('div'); // let newShoe create a new div
     newShoe.classList.add('shoe'); // add a class to it named "shoe"
 
+    const shoeImage = document.createElement('img');
+    shoeImage.src = newShoe.dataset.img;
+    shoeImage.style.display = 'none';
+
     const shoeInfo = document.createElement('div'); // assign the variable to a created dive element
     shoeInfo.classList.add('shoe-info'); // add a class to it name "shoe-info"
     // set the innerHTML property to shoe shoe info, (if instock is true write In Stock, else write Out of Stock)
@@ -128,6 +119,4 @@ resetButton.addEventListener('click', () => {
     colorInput.value = "";
     ratingInput.value = "";
 })
-
-console.log(shoes);
 

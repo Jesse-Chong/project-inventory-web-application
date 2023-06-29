@@ -28,18 +28,31 @@ header {
     filter: blur(1px);
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    position: relative;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* target all the elements within form inside the form-container and set eacho form element to appear on a new line */
+.form-container form * {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* target the label elements within the form and make the submission form more readable */
+.form-container form label {
+    font-weight: bold;
+    background-color: cadetblue;
+    /* make the background color basically match the submission boxes */
+    width: 147px;
+
 }
 
 .footer {
@@ -53,7 +66,32 @@ header {
 }
 
 @media (max-width: 767px) {
-    .submission-form {
-        display: none;
+    .grid-container {
+        flex-wrap: wrap;
+        flex-flow: column wrap;
     }
+
+    .submission-form {
+        flex-wrap: wrap;
+    }
+}
+
+.shoe {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+.shoe-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 5px;
+    display: none;
+}
+
+.shoe:hover .shoe-info {
+    display: block;
 }
