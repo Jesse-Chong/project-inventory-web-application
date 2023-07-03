@@ -1,81 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project-Inventory-Web-Application</title>
     <link rel="stylesheet" href="styles.css" />
     <script defer src="main.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1>Shoe Store Inventory</h1>
+      <h1>Shoe Store Inventory</h1>
     </header>
     <div class="background-container">
-        <img class="background-image" src="https://w0.peakpx.com/wallpaper/576/383/HD-wallpaper-up-in-the-air-nike-nike-air-nike-shoes-shoes.jpg" />
+      <img
+        class="background-image"
+        src="https://w0.peakpx.com/wallpaper/576/383/HD-wallpaper-up-in-the-air-nike-nike-air-nike-shoes-shoes.jpg"
+      />
     </div>
     <div class="grid-container">
+      <div class="shoe-container" id="shoe-info">
         <div class="shoe">
-            <div class="shoe-info">
-                <h3>Shoe ID: 1</h3>
-                <h3>Eminem X Jordan 4 Retro</h3>
-                <p>Price: $20000</p>
-                <p>In Stock</p> 
-                <p>Color: Black, Gray, White, Silver</p>
-                <p>Rating: 5</p>
-            </div>
-            <img class="shoe-img" src="https://i.ebayimg.com/images/g/uDMAAOSwerFiz5SE/s-l1600.jpg" alt="Shoe 1" style="width: 200px; height: 200px;">
+          <div class="shoe-info">
+            <h3>Shoe ID: 3</h3>
+            <h3>Eminem X Jordan 4 Retro</h3>
+            <p>Price: $20000</p>
+            <p><label for="toggle-inStock">In Stock</label></p>
+            <p><input type="checkbox" id="toggle-inStock" /></p>
+            <p>Color: Black, Gray, White, Silver</p>
+            <p>Rating: 5</p>
+          </div>
+          <img
+            class="shoe-img"
+            src="https://i.ebayimg.com/images/g/uDMAAOSwerFiz5SE/s-l1600.jpg"
+            alt="Shoe 1"
+          />
         </div>
         <div class="shoe">
-            <div class="shoe-info">
-                <h3>Shoe ID: 2</h3>
-                <h3>Louis Vuitton X Nike Air Force 1 Low</h3>
-                <p>Price: $3000</p>
-                <p>In Stock</p> 
-                <p>Color: White, Green</p>
-                <p>Rating: 4.5</p>
-            </div>
-            <img class="shoe-img" src="https://cdn-images.farfetch-contents.com/18/76/90/29/18769029_40595644_1000.jpg" alt="Shoe 2" style="width: 200px; height: 200px;">
+          <div class="shoe-info">
+            <h3>Shoe ID: 2</h3>
+            <h3>Louis Vuitton X Nike Air Force 1 Low</h3>
+            <p>Price: $3000</p>
+            <p><label for="toggle-inStock">In Stock</label></p>
+            <p><input type="checkbox" id="toggle-inStock" name="inStock" /></p>
+            <p>Color: White, Green</p>
+            <p>Rating: 4.5</p>
+          </div>
+          <img
+            class="shoe-img"
+            src="https://cdn-images.farfetch-contents.com/18/76/90/29/18769029_40595644_1000.jpg"
+            alt="Shoe 2"
+          />
         </div>
         <div class="shoe">
-            <div class="shoe-info">
-                <h3>Shoe ID: 3</h3>
-                <h3>Jimmy Choo X Timberland 6 Inch Graffiti Boot</h3>
-                <p>Price: $799.99</p>
-                <p>In Stock</p> 
-                <p>Color: Chestnut, Black</p>
-                <p>Rating: 3.5</p>
-            </div>
-            <img class="shoe-img" src="https://media.jimmychoo.com/image/upload/f_auto,q_auto:best,dpr_2.0,w_520,h_520,c_fit/USPROD_PRODUCT/images/original/JCXTIMBERLAND6FTJCG_0C8372_SIDE.jpg" alt="Shoe 3" style="width: 200px; height: 200px;">
+          <div class="shoe-info">
+            <h3>Shoe ID: 1</h3>
+            <h3>Jimmy Choo X Timberland 6 Inch Graffiti Boot</h3>
+            <p>Price: $799.99</p>
+            <p><label for="toggle-inStock">In Stock</label></p>
+            <p><input type="checkbox" id="toggle-inStock" /></p>
+            <p>Color: Chestnut, Black</p>
+            <p>Rating: 3.5</p>
+          </div>
+          <img
+            class="shoe-img"
+            src="https://media.jimmychoo.com/image/upload/f_auto,q_auto:best,dpr_2.0,w_520,h_520,c_fit/USPROD_PRODUCT/images/original/JCXTIMBERLAND6FTJCG_0C8372_SIDE.jpg"
+            alt="Shoe 3"
+          />
         </div>
-        <div class="submission-form">
+      </div>
+      <div class="submission-form">
         <div class="form-container">
-            <form id="shoe-form">
-                <label for="name">Name:</label>
-                <input type="text" id="shoe-name" placeholder="Please enter name" required>
-    
-                <label for="price">Price:</label>
-                <!-- step="0.01" is added to make a decimal enter-able-->
-                <input type="number" step="0.01" id="shoe-price"placeholder="Please enter price" required>
-    
-                <label for="inStock">In Stock:</label>
-                <input type="checkbox" id="shoe-inStock">
-    
-                <label for="color">Color:</label>
-                <input type="text" id="shoe-color" placeholder="Please enter color" required>
-    
-                <label for="rating">Rating:</label>
-                <input type="number"  step="0.01" id="shoe-rating" placeholder="Please enter rating" required max="5">
-    
-                <button type="Submit">Submit</button>
-                <button type="button" id="reset">Reset</button>
-            </form>
+          <div class="please-add-item">Please add item</div>
+          <form id="shoe-form">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="shoe-name"
+              placeholder="Please enter name"
+              required
+            />
+
+            <label for="price">Price:</label>
+            <!-- step="0.01" is added to make a decimal enter-able-->
+            <input
+              type="number"
+              step="0.01"
+              id="shoe-price"
+              placeholder="Please enter price"
+              required
+            />
+
+            <label for="shoe-inStock">In Stock:</label>
+            <input type="checkbox" id="shoe-inStock" name="inStock" />
+
+            <label for="color">Color:</label>
+            <input
+              type="text"
+              id="shoe-color"
+              placeholder="Please enter color"
+              required
+            />
+
+            <label for="rating">Rating:</label>
+            <input
+              type="number"
+              step="0.01"
+              id="shoe-rating"
+              placeholder="Please enter rating"
+              required
+              max="5"
+            />
+
+            <label for="image-url">Image Url:</label>
+            <input
+              type="url"
+              id="shoe-image-url"
+              placeholder="Enter image url"
+              required
+            />
+
+            <button type="Submit">Submit</button>
+            <button type="button" id="reset">Reset</button>
+          </form>
         </div>
+      </div>
     </div>
-</div>
     <footer class="footer">
-        <h2>Thank you for shopping!</h2>
+      <h2>Thank you for shopping!</h2>
     </footer>
-</body>
+  </body>
 </html>

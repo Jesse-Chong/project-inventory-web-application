@@ -1,115 +1,130 @@
 header {
-    text-align: center;
-    background-color: salmon;
-    border-radius: 25%;
+  text-align: center;
+  background-color: salmon;
+  border-radius: 25%;
 }
 
 .background-container {
-    position: fixed;
-    /* img will cover 50% of the containers width and adjust the height automatically */
-    top: 0;
-    left: 0;
-    /* ensures the container covers the entire webpage */
-    width: 100%;
-    height: 100%;
-    /* place the container behind other elements */
-    z-index: -1;
-    /* ensure overflow content is hidden */
-    overflow: hidden;
+  position: fixed;
+  /* img will cover 50% of the containers width and adjust the height automatically */
+  top: 0;
+  left: 0;
+  /* ensures the container covers the entire webpage */
+  width: 100%;
+  height: 100%;
+  /* place the container behind other elements */
+  z-index: -1;
+  /* ensure overflow content is hidden */
+  overflow: hidden;
 }
 
 .background-image {
-    /* style the actualy background image itself */
-    width: 100%;
-    height: 100%;
-    /* object-fit: fill will make the image fill the container completely to prevent distortions */
-    object-fit: fill;
-    /* add a blurred effect to make the background less distracting */
-    filter: blur(1px);
+  /* style the actualy background image itself */
+  width: 100%;
+  height: 100%;
+  /* object-fit: fill will make the image fill the container completely to prevent distortions */
+  object-fit: fill;
+  /* add a blurred effect to make the background less distracting */
+  filter: blur(1px);
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  position: relative;
 }
 
 /* target all the elements within form inside the form-container and set eacho form element to appear on a new line */
 form * {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* target the label elements within the form and make the submission form more readable */
 form label {
-    font-weight: bold;
-    background-color: aquamarine;
+  font-weight: bold;
+  background-color: aquamarine;
 }
 
 .submission-form {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
 
 .shoe {
-    position: relative;
-    display: flex;
-    width: 200px;
-    height: 250px;
-    margin: 10px;
-    grid-column: 1;
-    grid-row: auto;
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 250px;
+  margin: 10px;
+  grid-column: 1;
+  grid-row: auto;
 }
 
 .shoe-info {
-    background-color: skyblue;
-    padding: 5px;
-    position: absolute;
+  background-color: skyblue;
+  padding: 2px;
+  position: absolute;
+}
+
+.remove-button {
+  margin-left: 200px;
+  padding: 5px 10px;
 }
 
 .shoe-img {
-    object-fit: cover;
-    /* set the transparency of an element, 0 means the image is invisible */
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; 
+  object-fit: cover;
+  background-color: white;
+  /* set the transparency of an element, 0 means the image is invisible */
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
 }
 
 .shoe:hover .shoe-info {
-    opacity: 0;
+  display: none;
 }
 
 .shoe:hover .shoe-img {
-    opacity: 1;
-    /* set the transition of the opacity with a .3 second duration gradual effect and apply ease to control the speed of the transition */
-    transition: opacity 0.3s ease;
+  opacity: 1;
+  /* set the transition of the opacity with a .3 second duration gradual effect and apply ease to control the speed of the transition */
+  transition: opacity 0.3s ease;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 6%;
-    width: 100%;
-    background-color:aquamarine;
-    text-align: center;
-    padding: 5px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 6%;
+  width: 100%;
+  background-color: aquamarine;
+  text-align: center;
+  padding: 5px;
 }
 
 @media (max-width: 767px) {
-    .grid-container {
-        flex-wrap: wrap;
-        flex-flow: column wrap;
-    }
+  .grid-container {
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+  }
 
-    .submission-form {
-        display: none;
-    }
+  .submission-form {
+    display: none;
+  }
+}
+
+.please-add-item {
+  text-align: center;
+  background-color: chartreuse;
+  padding: 10px;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
 }
