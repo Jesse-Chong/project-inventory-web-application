@@ -1,6 +1,6 @@
 header {
     text-align: center;
-    background-color: darkgray;
+    background-color: salmon;
     border-radius: 25%;
 }
 
@@ -30,35 +30,73 @@ header {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     position: relative;
 }
 
-.form-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 /* target all the elements within form inside the form-container and set eacho form element to appear on a new line */
-.form-container form * {
+form * {
     display: block;
     margin-bottom: 5px;
 }
 
 /* target the label elements within the form and make the submission form more readable */
-.form-container form label {
+form label {
     font-weight: bold;
-    background-color: cadetblue;
-    /* make the background color basically match the submission boxes */
-    width: 147px;
-
+    background-color: aquamarine;
 }
 
-.footer {
+.submission-form {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.shoe {
+    position: relative;
+    display: flex;
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+    grid-column: 1;
+    grid-row: auto;
+}
+
+.shoe-info {
+    background-color: skyblue;
+    padding: 5px;
+    position: absolute;
+}
+
+.shoe-img {
+    object-fit: cover;
+    /* set the transparency of an element, 0 means the image is invisible */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+}
+
+.shoe:hover .shoe-info {
+    opacity: 0;
+}
+
+.shoe:hover .shoe-img {
+    opacity: 1;
+    /* set the transition of the opacity with a .3 second duration gradual effect and apply ease to control the speed of the transition */
+    transition: opacity 0.3s ease;
+}
+
+footer {
     position: fixed;
     bottom: 0;
     left: 0;
+    height: 6%;
     width: 100%;
     background-color:aquamarine;
     text-align: center;
@@ -72,26 +110,6 @@ header {
     }
 
     .submission-form {
-        flex-wrap: wrap;
+        display: none;
     }
-}
-
-.shoe {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-}
-
-.shoe-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    padding: 5px;
-    display: none;
-}
-
-.shoe:hover .shoe-info {
-    display: block;
 }

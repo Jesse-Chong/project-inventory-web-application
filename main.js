@@ -120,3 +120,4 @@ resetButton.addEventListener('click', () => {
     ratingInput.value = "";
 })
 
+// use toggle for update
